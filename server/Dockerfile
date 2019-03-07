@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM golang:1.9.6-alpine3.7
 RUN apk update && apk add --no-cache ca-certificates git
 ADD . /go/src/app/
 RUN cd /go/src/app && go-wrapper download && go-wrapper install

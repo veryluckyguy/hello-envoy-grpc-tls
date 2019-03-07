@@ -28,7 +28,7 @@ function main() {
     'grpc.default_authority': 'hello.com'
   };
   var creds = grpc.credentials.createSsl(fs.readFileSync('../envoy/pem/crt'));
-  var client = new services.GreeterClient('192.168.64.6:10000', creds, options);
+  var client = new services.GreeterClient('localhost:10000', creds, options);
   var request = new messages.HelloRequest();
   var user;
   if (process.argv.length >= 3) {
